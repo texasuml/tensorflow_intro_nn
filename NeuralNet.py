@@ -41,8 +41,8 @@ b_2 = tf.Variable(tf.random_normal([n_classes]))
 input_layer = tf.nn.sigmoid(tf.matmul(x, W) + b)
 hidden_layer = tf.nn.sigmoid(tf.matmul(input_layer, W_2))
 
-# Notice we do not apply a nonliterary to the final output layer. This is because tensorflow will
-# automatically apply softmax
+# Notice we do not apply a nonliterary to the final output layer. This is because we apply the softmax later on
+# in the cross_entropy section.
 
 y = tf.matmul(input_layer, W_2) + b_2
 y_ = tf.placeholder(tf.float32, [None, n_classes])
